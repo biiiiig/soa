@@ -5,6 +5,7 @@ package com.fhzz;
 import org.apache.log4j.Logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 
 /**
  * @Description: 主程序入口
@@ -13,6 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @vision v1.0
  */ 
 @SpringBootApplication
+@ServletComponentScan
 public class Application {
 
 	private static Logger logger = Logger.getLogger(Application.class);
