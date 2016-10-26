@@ -31,9 +31,19 @@ public class UserController {
 						@RequestParam(value="passWord") String passWord,
 						HttpSession session){
 		 User loginUser = userService.checkLogin(userName);
-		 session.setAttribute("loginUser", loginUser);
-	     return "redirect:/user/success";
-		
+		//若获取失败
+	        if(loginUser == null){
+	        	return "user/login";
+	        }
+	        //获取成功后，将获取用户的密码和传入密码做对比
+	        else if(!passWord.equals(loginUser.getPassWord())){
+	        	return "user/login";
+	        }
+	        else{
+	        	//若密码也相同则登录成功
+	        	session.setAttribute("loginUser", loginUser);
+	   	     	return "redirect:/user/success";
+	        }
 	}
 	
 	
