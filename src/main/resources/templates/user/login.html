@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+<title>data binding example</title>
+</head>
+<body>
+    <h1>欢迎登陆</h1>
+    <form th:action="/users/login"  method="post">
+        <label for="userName">用户名:</label>
+        <input type="text" name="userName" id="userName"/>
+        <label for="password">密码:</label>
+        <input type="text" name="passWord" id="passWord"/>
+        <input type="submit" value="登录">
+    </form>
+</body>
+</html>
